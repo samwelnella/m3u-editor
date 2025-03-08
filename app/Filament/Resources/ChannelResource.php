@@ -485,8 +485,8 @@ class ChannelResource extends Resource
                 ])
                 ->searchable()
                 ->columnSpan(1),
-            Forms\Components\TextInput::make('tvc-guide-stationid_custom')
-                ->label('tvc-guide-stationid')
+            Forms\Components\TextInput::make('tvc_guide_stationid_custom')
+                ->label('Channels DVR Gracenote Station ID')
                 ->helperText("Leave empty to use playlist default value.")
                 ->columnSpan(1)
                 ->rules(['min:1', 'max:255']),
