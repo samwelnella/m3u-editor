@@ -485,6 +485,11 @@ class ChannelResource extends Resource
                 ])
                 ->searchable()
                 ->columnSpan(1),
+            Forms\Components\TextInput::make('tvc-guide-stationid_custom')
+                ->label('tvc-guide-stationid')
+                ->helperText("Leave empty to use playlist default value.")
+                ->columnSpan(1)
+                ->rules(['min:1', 'max:255']),
         ];
     }
 }
