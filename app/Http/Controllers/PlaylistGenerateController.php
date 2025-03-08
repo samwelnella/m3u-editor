@@ -46,6 +46,7 @@ class PlaylistGenerateController extends Controller
                     $name = $channel->name_custom ?? $channel->name;
                     $tvgId = $channel->stream_id_custom ?? $channel->stream_id;
                     $url = $channel->url_custom ?? $channel->url;
+                    $tvcGuideStationId = $channel->tvc_guide_stationid_custom ?? null;
                     $epgData = $channel->epgChannel ?? null;
                     $channelNo = $channel->channel;
                     if (!$channelNo && $playlist->auto_channel_increment) {
@@ -61,7 +62,7 @@ class PlaylistGenerateController extends Controller
                     }
 
                     // Output the channel
-                    echo "#EXTINF:-1 tvg-chno=\"$channelNo\" tvg-id=\"$tvgId\" tvg-name=\"$name\" tvg-logo=\"$icon\" group-title=\"$channel->group\"," . $title . "\n";
+                    echo "#EXTINF:-1 tvg-chno=\"$channelNo\" tvg-id=\"$tvgId\" tvg-name=\"$name\" tvg-logo=\"$icon\" tvc-guide-stationid=\"$tvcGuideStationId\" group-title=\"$channel->group\"," . $title . "\n";
                     echo $url . "\n";
                 }
             },
